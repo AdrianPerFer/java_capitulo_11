@@ -25,6 +25,8 @@ public class Ejercicio3 {
         if (args.length != 3){
             System.exit(-1);
         }
+        /*Funciones argumentos = new Funciones();
+        argumentos.cantidadArgumentos(args);*/
         try {
             BufferedReader bf1 = new BufferedReader(new FileReader(args[0]));
             BufferedReader bf2 = new BufferedReader(new FileReader(args[1]));
