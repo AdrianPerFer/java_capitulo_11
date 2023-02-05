@@ -29,17 +29,25 @@ public class Ejercicio4 {
                 palabras.add(linea);
                 linea = br.readLine();
             }
+            if (br != null) {
+                br.close();
+            }
         } catch (IOException e) {
             System.out.println("Error al leer el archivo: " + e.getMessage());
             return;
         }
-    
+
         Collections.sort(palabras);
-    
-        String nombreArchivoSalida = "palabras_sort.txt";
+        int longitud = args[0].length();
+        String principio = args[0].substring(0, longitud - 4);
+        String fin = args[0].substring(longitud - 4, longitud);
+        String nombreArchivoSalida =  principio + "_sort" + fin;
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(nombreArchivoSalida))) {
             for (String palabra : palabras) {
                 bw.write(palabra + "\n");
+            }
+            if (bw != null) {
+                bw.close();
             }
         } catch (IOException e) {
             System.out.println("Error al escribir en el archivo: " + e.getMessage());
